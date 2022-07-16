@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html ng-app="MyApp">
    <head>
       <!-- basic -->
       <meta charset="utf-8">
@@ -36,8 +36,12 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
       <![endif]-->
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+      <script src="/Agular/Module.js"></script>
+        <script src="/Agular/Service.js"></script>
+        <script src="/Agular/Vedorctr.js"></script>
    </head>
-   <body class="inner_page tables_page">
+   <body class="inner_page tables_page" ng-controller="Vendor">
       <div class="full_container">
          <div class="inner_container">
             <!-- Sidebar  -->
@@ -151,68 +155,149 @@
                </div>
                <!-- end topbar -->
                <!-- dashboard inner -->
-               <div class="midde_cont">
-                  <div class="container-fluid">
-                     <div class="row column_title">
-                        <div class="col-md-12">
-                           <div class="page_title">
-                              <h2>Tables</h2>
-                           </div>
-                        </div>
-                     </div>
-                     <!-- row -->
-                     <div class="row">
-                        <!-- table section -->
-                
-                     
-                        <!-- table section -->
-                        <div class="col-md-12">
-                           <div class="white_shd full margin_bottom_30">
-                              <div class="full graph_head" style="background-color:#15283c ;">
-                                 <div class="heading" >
-                                    <h2 style="color:#ffff ;"> Catgory List</h2 >
-                                 </div>
-                              </div>
-                              <div class="table_section padding_infor_info">
-                                 <div class="table-responsive-sm">
-                                    <table class="table">
-                                       <thead>
-                                          <tr>
-                                             <th>#</th>
-                                             <th>Firstname</th>
-                                             <th>Lastname</th>
-                                             <th>Age</th>
-                                             <th>City</th>
-                                             <th>Country</th>
-                                             <th>Sex</th>
-                                             <th>Example</th>
-                                             <th>Example</th>
-                                             <th>Example</th>
-                                             <th>Example</th>
-                                          </tr>
-                                       </thead>
-                                       <tbody>
-                                          <tr>
-                                             <td>1</td>
-                                             <td>Anna</td>
-                                             <td>Pitt</td>
-                                             <td>35</td>
-                                             <td>New York</td>
-                                             <td>USA</td>
-                                             <td>Female</td>
-                                             <td>Yes</td>
-                                             <td>Yes</td>
-                                             <td>Yes</td>
-                                             <td>Yes</td>
-                                          </tr>
-                                       </tbody>
-                                    </table>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
+               <div class="content-wrapper" >
+                  <!-- Content Header (Page header) -->
+                  <div class="content-header">
+                      <div class="container-fluid">
+                          <div class="row mb-2">
+                              <div class="col-sm-6">
+                         
+                              </div><!-- /.col -->
+                              <div class="col-sm-6">
+                                 
+                              </div><!-- /.col -->
+                          </div><!-- /.row -->
+                      </div><!-- /.container-fluid -->
                   </div>
+                  <!-- /.content-header -->
+                  <div class="hidden toastr-" data-title=""
+                       data-position="toast-top-center" data-icon="" data-status="">&nbsp;&nbsp;</div>    
+                  <section class="content">
+                      <div class="container-fluid">
+                          <div class="row">
+                              <div class="col-12">
+                                  <div class="card">
+                                      <div class="card-header"style="background-color:#343a40 ; ">
+                                          <h3 class="card-title" style="color:#ff5722;" > Add Catgory</h3>
+                                      </div>
+                                      <div class="card-body">
+                                         {{fdsfsdefe}}
+                                          <div class="row">
+                                              <div class="col-12">
+                                                  <form name="myform" id="myform">
+                                                      <h3 class="header smaller lighter">Catgory Details</h3>
+                                                      <br>
+                                                      
+                                                     
+                                                      
+               
+                                                      <div class="row">
+                                                          <div class="col-md-4">
+                                                              <div class="form-group">
+                                                                  <label for="password">Catgory Name</label>
+                                                                  <input type="text" class="form-control" id="email" Placeholder="Catogory Name" autocomplete="off"
+                                                                         ng-model="CatgoryName" />
+                                                              </div>
+                                                          </div>
+               
+               
+               
+                                                          <div class="col-md-4">
+                                                              <div class="form-group">
+                                                                  <label for="password">Catgory Image</label>
+                                                                  <input type="file" class="form-control" id="email" Placeholder="Owner" autocomplete="off"
+                                                                         ng-model="CatgoryImage" />
+                                                              </div>
+                                                          </div>
+               
+               
+               
+                                                          <div class="col-md-4">
+                                                              <div class="form-group">
+                                                                  <label for="password">Catogary Video</label>
+                                                                  <input type="file" class="form-control" id="email" Placeholder="Sub-Catogary" ng-model="CatogaryVideo" />
+                                                              </div>
+                                                          </div>
+               
+                                                      </div>
+               
+                                                   
+                                                      
+                                                     
+                                                        
+                                                      <div class="row">
+                                                          <div class="col-12">
+                                                              <button type="button" class="btn btn-sm btn-success" id="savebtn"
+                                                                      name="addmember" ng-click="SaveCatogory()">
+                                                                  Submit
+                                                              </button>
+                                                          </div>
+                                                      </div>
+                                                  </form>
+                                              </div>
+                                          </div>
+                                          <div id="dot-loader" class="hidden">
+                                              <img src="http://192.168.1.116/templates/osfigo/assets/images/dotsloader.gif" alt="" height="10">
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </section>
+                  <br>
+                  <br>
+               
+               
+                               
+                                
+                                       <!-- table section -->
+                                       <div class="container-fluid">
+                                          <div class="row">
+                                              <div class="col-xl-12">
+                                                  <div class="card">
+                                                      <div class="card-body">
+                                                          <h4 class="card-title" style="font-weight:bold; color:orangered;font-size:20px;">Catogry  List</h4>
+                                                          <div class="table-responsive-sm">
+                                                              <table id="paypump" class="table table-striped dt-responsive nowrap">
+                                                                  <thead>
+                                                                      <tr style="color:black">
+                                                                          <th>Sl.No</th>
+                                  
+                                  
+                                                                          <th>Catogry Name</th>
+                                  
+                                                                          <th>Catogry Image</th>
+                                                                          <th>Catogry Videos </th>
+                                                                          
+                                  
+                                                                          <th>Action</th>
+                                                                      </tr>
+                                                                  </thead>
+                                                                  <tbody>
+                                                                      <tr ng-repeat="model in RoleList">
+                                                                         {{payload}}
+                                                                          <td>{{$index + 1}}</td>
+                                                                          <td>{{model.Name}}</td>
+                                                                          <td>{{model.MobileNo}}</td>
+                                                                          <td>{{model.EmailId}}</td>
+                                                                          
+                                                                          <td>
+                                  
+                                                                              <button type="button" class="btn btn-outline-danger" ng-click="DeleteReg(model)">Delete</button>
+                                  
+                                                                          </td>
+                                                                      </tr>
+                                                                  </tbody>
+                                                              </table>
+                                                          </div>
+                                  
+                                                      </div> <!-- end card body-->
+                                                  </div> <!-- end card -->
+                                              </div><!-- end col-->
+                                          </div>
+                                          <!-- end row-->
+                                      </div>
                   <!-- footer -->
                   <div class="container-fluid">
                      <div class="footer">
