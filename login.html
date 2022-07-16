@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+
+<html ng-app="MyApp">
+<head>
+   <title>WIZE VIP - login</title>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+ <link rel="stylesheet" href="./login.css">
+
+   <link href="~/Content/angular-toastr.css" rel="stylesheet" />
+   <script src="~/Scripts/angular.js"></script>
+   <script src="~/Content/js/dirPagination.js"></script>
+   <script src="~/Scripts/angular-route.js"></script>
+   <script src="~/Content/angular-toastr.tpls.js"></script>
+
+   <script src="~/Angular/Module.js"></script>
+   <script src="~/Angular/Service.js"></script>
+   <script src="~/Angular/SessionManager.js"></script>
+   <script src="~/Angular/LoginController.js"></script>
+   <script src="~/Content/js/jquery.min.js"></script>
+   <script src="~/Content/js/jquery-ui.min.js"></script>
+</head>
+<body class="img js-fullheight" style="background-image: url(./images/table-g6449e0012_1920.jpg) " ng-controller="userLogin">
+   <section class="ftco-section">
+       <div class="container">
+           <div class="row justify-content-center">
+               <div class="col-md-6 text-center mb-5">
+
+               </div>
+           </div>
+           <div class="row justify-content-center">
+               <div class="col-md-6 col-lg-4" style="background-color: #ffffff3b">
+
+                   <div class="login-wrap p-0" ng-hide="loginHide">
+                       <h3 class="mb-4 text-center">   <img src="./images/Qool Qatar - Logo 1@3x.png" style="height:70px;margin-top:15px; width: 200px;; " /></h3>
+                       <form name="frm">
+                           <div class="form-group">
+                               <input type="text" class="form-control" placeholder="Username" required ng-model="UserName">
+                           </div>
+                           <div class="form-group">
+                               <input id="password-field" type="password" class="form-control" placeholder="Password" required ng-model="Password">
+                               <span toggle="#password-field" id="togglePassword" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                           </div>
+                           <div class="form-group">
+                               <div class="w-50">
+                                   <label class="checkbox-wrap checkbox-primary">
+                                       Remember Me
+                                       <input type="checkbox" checked>
+                                       <span class="checkmark"></span>
+                                   </label>
+                               </div>
+                           </div>
+                           <div class="form-group">
+                               <!-- <button type="button" class="form-control btn btn-primary submit px-3" ng-click="DoLogin()">Sign In</button> -->
+                               <a href="dashboard_2.html" type="button" class="form-control btn btn-primary submit px-3" >Sign In</a>
+                           </div>
+                           <div class="form-group row">
+                               <div class="col-md-6">
+                                   <a href="~/registration/registration" style="color: #fff">Registration</a>
+                               </div>
+                               <div class="col-md-6">
+                                   <a href="#" style="color: #fff" ng-click="forgotpass()">Forget Password</a>
+                               </div>
+                           </div>
+                       </form>
+                   </div>
+
+                   <!-- <div class="login-wrap p-0" ng-hide="ForgotHide">
+                       <h3 class="mb-4 text-center">  
+                       <img src="~/Content/images/WI_Logo.png" style="height:80px;margin-top:15px;" /></h3>
+                       <form name="frm">
+                           <div class="form-group">
+                               <input type="text" class="form-control" placeholder="Mobile No" required ng-model="MobileNo" maxlength="10">
+                           </div>
+                           <div class="form-group" ng-hide="hideOtp">
+                               <input type="text" class="form-control" placeholder="Enter OTP" maxlength="4" required ng-model="otp" ng-change="otpChange()">
+                           </div>
+                           <div class="form-group">
+                               <input id="password-field1" type="password" class="form-control" placeholder="Password" required ng-model="newPassword" ng-hide="hideNewPassword">
+                               <span toggle="#password-field1" id="togglePassword" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                           </div>
+                           <div class="form-group">
+                               <button type="button" class="form-control btn btn-primary submit px-3" ng-click="sendOtp()">{{btnName}}</button>
+                           </div>
+
+                           <div class="form-group row">
+                               {{MyOTP}}
+                               <div class="col-md-6">
+                                   <a href="#" style="color: #fff" ng-click="goBack()">Go Back</a>
+                               </div>
+                           </div>
+                       </form>
+                   </div> -->
+
+
+               </div>
+           </div>
+       </div>
+   </section>
+
+
+
+   @*<script src="~/Content/js/popper.js+bootstrap.min.js+main.js.pagespeed.jc.9eD6_Mep8S.js"></script>*@
+
+   <script>
+       const togglePassword = document.querySelector('#togglePassword');
+       const password = document.querySelector('#password-field');
+
+       togglePassword.addEventListener('click', function (e) {
+           // toggle the type attribute
+           const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+           password.setAttribute('type', type);
+           // toggle the eye slash icon
+           this.classList.toggle('fa-eye-slash');
+       });
+   </script>
+</body>
+</html>
